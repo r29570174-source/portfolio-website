@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #4a6cf7;
+    --text-dark: #0e1133;
+    --text-light: #6c757d;
+    --big-white: #ffffff;
+    --bg-card: #f8f9fa;
+    --border-color: #e2e8f0;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Popins', sans-serif;
+    text-decoration: none; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: block;
+    background: linear-gradient(to right, rgba(255,255,255),rgba(254,215,173));
+    color: var(--text-dark);
+    line-height: 1.4rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    color: orange;
+    background-color: black;
+    padding: 2px;
+    border-radius: 800px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0,0.05);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 10px 20px;
+}
+
+nav a {
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    position: relative;    
+    color: white;
+    cursor: pointer;
+    left: 200px;
+}
+
+nav a:hover {
+     transform: translateY(-5px);
+     font-size: 21px;
+     padding: 10px;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff4b4b, #8b2cff);
+    opacity: 0;
+    z-index: -1;
+    transition: .35s;
+}
+
+nav a:hover::before {
+    opacity: 1;
+}
+
+
+.img {
+    float: left;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    border-radius: 250px;
+}
+
+.facebook {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    top: -115px;
+    margin-left: 600px;   
+}
+
+.gmail {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    top: -112px;
+    left: 830px; 
+}
+
+.instagram {
+     position: relative;
+    height: 75px;
+    width: 75px;
+    top: -95px;
+    left: 300px; 
+}
+
+section {
+    padding: 100px 8% 60px;
+    min-height: 100vh;
+}
+
+section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home h2{
+    font-size: 48px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 25px;
+}
+
+#home h2::after {
+    display: none;
+}
+
+#home p {
+    font-size: 18px;
+    color: var(--text-light);
+    max-width: 600px;
+    margin-bottom: 100px;
+}
+
+#home button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(74, 108, 247, 0.3);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#home button:hover {
+    background-color: #3b5bdb;
+    transform: translateY(-5px);
+}
+
+.about,
+.skill-box,
+.project,
+.interest,
+.achievements,
+.experience {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.about p,
+.skill-box p,
+.project p,
+.interest p,
+.achievements p,
+.experience p {
+    background-color: var(--bg-card);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+.about p:hover,
+.skill-box p:hover,
+.project p:hover,
+.interest p:hover,
+.achievements p:hover,
+.experience p:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(74, 108, 247, 0.12);
+    border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    #home h2 {
+        font-size: 34px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    section {
+        padding: 80px 5% 40px;
+    }
+}
